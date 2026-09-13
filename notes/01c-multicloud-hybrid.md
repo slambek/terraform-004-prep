@@ -26,7 +26,7 @@ Terraform is **service-agnostic**. It uses **providers** (plugins) to interact w
 - **Developer Enablement:** App teams deploy compliant infrastructure independently without manual ticket requests.
 
 ### 5. Policy, Governance & Ephemeral Envs
-- **Sentinel (Policy as Code):** Enforces compliance, cost limits, and security rules *before* `apply` (HCP Terraform / Enterprise).
+- **Sentinel (Policy as Code):** Enforces compliance, cost limits, and security rules *before* `apply` (HCP Terraform / Enterprise). Full mechanics — enforcement levels, policy sets, OPA as an alternative framework — are in **8b**.
 - **Disposable Infrastructure:** Rapidly provisions and destroys (`destroy`) temporary environments (QA, Staging, Demos) to reduce costs.
 
 ---
