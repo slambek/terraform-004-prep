@@ -1,13 +1,15 @@
 # Terraform 004 Preparation Notes
 
-Choose your preferred language / Выберите язык:
+Prep. notes for **HashiCorp Certified: Terraform Associate (004)**.
 
-### 🇬🇧 English
-- 📖 [README](README.en.md)
-- ⚡️ [Cheatsheet](CHEATSHEET.en.md) — Quick exam prep & edge cases
-- 📁 [Notes](notes/en/) — Detailed study notes by objective (01a–08d)
+## 🇬🇧 English
 
-### 🇷🇺 Русский
-- 📖 [README](README.ru.md)
-- ⚡️ [Шпаргалка](CHEATSHEET.ru.md) — Экспресс-повторение перед экзаменом
-- 📁 [Конспекты](notes/ru/) — Подробные заметки по темам (01a–04h)
+* 📖 [README](README.en.md)
+* ⚡️ [Cheatsheet](CHEATSHEET.en.md)
+* 📁 [Notes](notes/en/)
+
+## 🇷🇺 Русский
+
+* 📖 [README](README.ru.md)
+* ⚡️ [Шпаргалка](CHEATSHEET.ru.md)
+* 📁 [Конспекты](notes/ru/)
