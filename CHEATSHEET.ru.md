@@ -16,7 +16,7 @@
 * Каждый реальный объект должен маппиться **ровно в один** resource instance в state.
 * **Никогда** не редактировать state-файл вручную.
 
-📄 [01a](notes/01a-what-is-iac.md) · [01b](notes/01b-advantages-of-iac.md) · [01c](notes/01c-multicloud-hybrid.md) · [02b](notes/02b-provider-usage.md) · [02d](notes/02d-state-fundamentals.md)
+📄 [01a](notes/ru/01a-what-is-iac.md) · [01b](notes/ru/01b-advantages-of-iac.md) · [01c](notes/ru/01c-multicloud-hybrid.md) · [02b](notes/ru/02b-provider-usage.md) · [02d](notes/ru/02d-state-fundamentals.md)
 
 ---
 
@@ -30,7 +30,7 @@
 * Terraform резолвит провайдер ресурса по **префиксу типа** (`aws_instance` → `aws`), поэтому named local name имеет значение.
 * Cross-provider зависимости (напр. `random` → `aws`) резолвятся автоматически через единый resource graph — специальный синтаксис не нужен.
 
-📄 [02a](notes/02a-install-providers.md) · [02b](notes/02b-provider-usage.md) · [02c](notes/02c-multiple-providers.md)
+📄 [02a](notes/ru/02a-install-providers.md) · [02b](notes/ru/02b-provider-usage.md) · [02c](notes/ru/02c-multiple-providers.md)
 
 ---
 
@@ -48,7 +48,7 @@
 * `terraform destroy` = буквально `terraform apply -destroy`. Убрать один ресурс, не разрушая всё — просто удали/закомментируй блок и сделай `apply`; `destroy` для этого не нужен.
 * Флаг `-target` встречается в `plan`/`apply`/`destroy` — везде это «крайняя мера», предпочтительнее дробить конфигурацию.
 
-📄 [03a](notes/03a-terraform-workflow.md)–[03g](notes/03g-terraform-fmt.md)
+📄 [03a](notes/ru/03a-terraform-workflow.md)–[03g](notes/ru/03g-terraform-fmt.md)
 
 ---
 
@@ -100,7 +100,7 @@
 * Единственные способы **не хранить** значение вообще: `ephemeral` (variable/output/block) и write-only аргументы (`_wo` + `_wo_version`, 1.11+).
 * Vault provider даёт **короткоживущие** credentials вместо статичных — но **не редактирует** ничего в state/plan; то, что прочитано из Vault, всё равно попадает в state в открытом виде.
 
-📄 [04a](notes/04a-resource-vs-data-blocks.md)–[04h](notes/04h-sensitive-data-vault.md)
+📄 [04a](notes/ru/04a-resource-vs-data-blocks.md)–[04h](notes/ru/04h-sensitive-data-vault.md)
 
 ---
 
@@ -115,7 +115,7 @@
 * Никогда не поставлять с модулем: `terraform.tfstate`, `.terraform/`, `*.tfvars`.
 * Рекомендация: **плоское** дерево модулей (один уровень вложенности), связанное выражениями из root-модуля.
 
-📄 [05a](notes/05a-module-sources.md)–[05d](notes/05d-module-versions.md)
+📄 [05a](notes/ru/05a-module-sources.md)–[05d](notes/ru/05d-module-versions.md)
 
 ---
 
@@ -132,7 +132,7 @@
 * `terraform state push` защищён от **differing lineage** и **higher serial** на destination (обходится `-force`, не рекомендуется без бэкапа).
 * Configuration drift (внешние изменения ломают конфиг) ≠ state drift (внешние изменения, не ломающие конфиг) — второе чинится через `-refresh-only`.
 
-📄 [06a](notes/06a-local-backend.md)–[06d](notes/06d-resource-drift-state-mgmt.md)
+📄 [06a](notes/ru/06a-local-backend.md)–[06d](notes/ru/06d-resource-drift-state-mgmt.md)
 
 ---
 
@@ -147,7 +147,7 @@
 * Уровни логов (по убыванию): **TRACE → DEBUG → INFO → WARN → ERROR**. `TRACE` — для баг-репортов.
 * 4 слоя диагностики, ближе к пользователю первыми: **язык (HCL) → state → core → provider**.
 
-📄 [07a](notes/07a-import-existing-infrastructure.md)–[07c](notes/07c-verbose-logging.md)
+📄 [07a](notes/ru/07a-import-existing-infrastructure.md)–[07c](notes/ru/07c-verbose-logging.md)
 
 ---
 
@@ -166,4 +166,4 @@
 * Для кросс-workspace чтения outputs: `tfe_outputs` (рекомендуется для HCP Terraform/Enterprise, тянет только outputs через API) **предпочтительнее** `terraform_remote_state` (требует доступа ко **всему** state, плюс явного разрешения от source-workspace).
 * `cloud`-блок не имеет `prefix`-аргумента (legacy-концепция `remote`-backend) — используй `tags`. `terraform login` — **только интерактивный**, для автоматизации нужны credentials вручную. `terraform import` **всегда** выполняется **локально**, даже с настроенной CLI-интеграцией.
 
-📄 [08a](notes/08a-hcp-terraform-create-infrastructure.md)–[08d](notes/08d-cli-integration.md)
+📄 [08a](notes/ru/08a-hcp-terraform-create-infrastructure.md)–[08d](notes/ru/08d-cli-integration.md)

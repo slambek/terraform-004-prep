@@ -2,48 +2,48 @@
 
 ## Core Concept
 
-Infrastructure as Code (IaC) manages infrastructure using human-readable configuration files instead of manual GUI/CLI interactions.
+Infrastructure as Code (IaC) управляет инфраструктурой с помощью человекочитаемых конфигурационных файлов вместо ручных взаимодействий через GUI/CLI.
 
-**IaC allows you to build, change, and manage infrastructure in a safe, consistent, and repeatable way.**
+**IaC позволяет строить, изменять и управлять инфраструктурой безопасным, согласованным и повторяемым способом.**
 
 ## Key Exam Concepts
 
 * **Declarative vs Imperative:**
 
-  * **Declarative (Terraform):** You define **WHAT** the desired end-state should be.
-  * **Imperative (Bash, Python CLI):** You define **HOW** to achieve a state via step-by-step commands.
+  * **Declarative (Terraform):** Вы определяете, **ЧТО** должно представлять собой желаемое конечное состояние.
+  * **Imperative (Bash, Python CLI):** Вы определяете, **КАК** достичь состояния через пошаговые команды.
 
 * **Vendor-Agnostic / Multi-Cloud:**
 
-  * Terraform uses a single configuration language (HCL) and consistent workflow across multiple providers.
-  * Examples: AWS, GCP, Azure, Kubernetes.
-  * Cloud-native tools are generally tied to their respective platforms (for example, CloudFormation for AWS).
+  * Terraform использует единый язык конфигурации (HCL) и согласованный workflow для множества провайдеров.
+  * Примеры: AWS, GCP, Azure, Kubernetes.
+  * Cloud-native инструменты обычно привязаны к соответствующим платформам (например, CloudFormation для AWS).
 
 * **Day 0 vs Day 1+:**
 
-  * **Day 0 (Provisioning):** Initial infrastructure setup — VPCs, VMs, databases, storage.
-  * **Day 1+ (Configuration/Ops):** Subsequent configuration and operational changes — OS updates, patches, application configuration.
-  * Terraform can participate across the infrastructure lifecycle, while tools such as Ansible or Chef are commonly used for configuration management.
+  * **Day 0 (Provisioning):** Первоначальная настройка инфраструктуры — VPC, VM, базы данных, хранилища.
+  * **Day 1+ (Configuration/Ops):** Последующая конфигурация и эксплуатационные изменения — обновления ОС, патчи, конфигурация приложений.
+  * Terraform может участвовать на всём протяжении жизненного цикла инфраструктуры, тогда как такие инструменты, как Ansible или Chef, обычно используются для управления конфигурацией.
 
 * **Idempotency:**
 
-  * Re-running the same desired configuration produces the same intended end state without unnecessary changes.
-  * This makes infrastructure changes consistent, repeatable, and predictable.
+  * Повторный запуск одной и той же желаемой конфигурации приводит к одному и тому же намеченному конечному состоянию без лишних изменений.
+  * Это делает изменения инфраструктуры согласованными, повторяемыми и предсказуемыми.
 
 * **Immutable Infrastructure:**
 
-  * Infrastructure components can be replaced rather than modified in-place.
-  * Terraform takes an immutable approach to infrastructure.
+  * Компоненты инфраструктуры можно заменять, а не модифицировать на месте.
+  * Terraform придерживается immutable-подхода к инфраструктуре.
 
 * **State File:**
 
-  * Terraform uses the state file to track real infrastructure.
-  * State helps Terraform determine what changes are required to make real infrastructure match the configuration.
+  * Terraform использует state-файл для отслеживания реальной инфраструктуры.
+  * State помогает Terraform определить, какие изменения нужны, чтобы реальная инфраструктура соответствовала конфигурации.
 
 ## Core Workflow
 
-1. **Scope** → Identify the required infrastructure.
-2. **Author (Write)** → Define resources in declarative HCL files (`.tf`).
-3. **Initialize (`terraform init`)** → Initialize the working directory and install required providers/plugins and configure the backend.
-4. **Plan (`terraform plan`)** → Preview the changes Terraform intends to make.
-5. **Apply (`terraform apply`)** → Execute the planned changes in the correct dependency order.
+1. **Scope** → Определить необходимую инфраструктуру.
+2. **Author (Write)** → Описать ресурсы в декларативных HCL-файлах (`.tf`).
+3. **Initialize (`terraform init`)** → Инициализировать рабочую директорию, установить необходимые провайдеры/плагины и настроить backend.
+4. **Plan (`terraform plan`)** → Предварительно просмотреть изменения, которые собирается внести Terraform.
+5. **Apply (`terraform apply`)** → Выполнить запланированные изменения в правильном порядке зависимостей.
